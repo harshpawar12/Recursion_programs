@@ -1,0 +1,34 @@
+package Recursion;
+
+
+
+public class StringPermutation {
+	
+	public static void ispossibility(String s,String per)
+	{
+		if(s.length()==0)
+		{
+			System.out.println(per);
+		
+		}
+		for(int i=0;i<s.length();i++)
+		{
+			char ch=s.charAt(i);
+			System.out.println(ch+"-----");
+			
+			String newstr=s.substring(0, i)+s.substring(i+1);
+			System.out.println(newstr+"-------->");
+			
+			ispossibility(newstr, per+ch);
+		}
+	}
+	
+	
+	public static void main(String[] args) {
+		
+		String s="java";
+		ispossibility(s,"");
+	}
+	
+
+}
